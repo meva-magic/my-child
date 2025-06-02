@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyFollow : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     public float speed;
 
@@ -14,5 +14,10 @@ public class EnemyFollow : MonoBehaviour
     private void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+    }
+
+    void OnDestroy()
+    {
+        Debug.Log("Противник уничтожен!");
     }
 }
